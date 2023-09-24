@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>svelte-vite-rails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'application' %>
+    <%= vite_stylesheet_tag '~/stylesheets/svelte-on-rails.css' %>
+  </head>
+
+  <body class="light">
+    <%= content_tag :div, "", id: "header" %>
+    <%= vite_javascript_tag 'header' %>
+
+    <%= yield %>
+
+    <%= content_tag :div, "", id: "footer" %>
+    <%= vite_javascript_tag 'footer' %>
+  </body>
+</html>
